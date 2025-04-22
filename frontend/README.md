@@ -1,36 +1,93 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🖥 Frontend DApp – Next.js
 
-## Getting Started
+This folder contains the web-based DApp for interacting with the blockchain escrow smart contract.
 
-First, run the development server:
+---
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+## 🚀 Stack & Features
+
+- **Next.js** (TypeScript, App Router)
+- **RainbowKit, wagmi, viem** – wallet connection, contract read/write
+- **Base Sepolia** testnet integration
+- **Escrow state visualization**
+- **Modern UI/UX**
+
+---
+
+## 📂 Folder Structure
+
+```
+frontend/
+├── src/
+│   ├── app/                # Main app pages/components
+│   │   ├── page.tsx        # Dashboard UI
+│   │   ├── layout.tsx      # Layout wrapper
+│   │   ├── globals.css     # Global styles
+│   │   └── page.module.css # Component styles
+│   ├── escrowConfig.ts     # Contract ABI & address import
+│   └── Escrow.json         # Contract ABI artifact
+├── public/                 # Static assets (SVGs, favicon)
+├── escrow-address.txt      # Deployed contract address
+├── .env.local              # Frontend environment variables
+├── package.json            # Dependencies
+└── ...
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+---
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## ⚡️ Getting Started
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+1. Install dependencies:
+   ```bash
+   npm install
+   # or yarn install
+   ```
+2. Set up `.env.local` (see example below).
+3. Ensure `escrow-address.txt` contains the deployed contract address.
+4. Run the dev server:
+   ```bash
+   npm run dev
+   ```
+5. Open [http://localhost:3000](http://localhost:3000)
 
-## Learn More
+---
 
-To learn more about Next.js, take a look at the following resources:
+## 🔑 Environment Variables
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- `NEXT_PUBLIC_WALLETCONNECT_PROJECT_ID` – Your WalletConnect project ID
+- (Other variables as needed for analytics, etc.)
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+---
 
-## Deploy on Vercel
+## 🔗 Contract Integration
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- Contract ABI is loaded from `src/Escrow.json`.
+- Contract address is read from `escrow-address.txt`.
+- All blockchain interactions use wagmi/viem hooks.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+---
+
+## 👤 User Flow
+
+- Connect wallet (RainbowKit)
+- View escrow state and participants
+- Initiate, confirm, release, or dispute escrow (if permitted by role)
+- See real-time contract state updates
+
+---
+
+## 🛠 Customization
+
+- Update UI in `src/app/page.tsx` and styles in `page.module.css`.
+- To add new features, create new components under `src/app/`.
+
+---
+
+## 📄 Reference
+
+- [Next.js Docs](https://nextjs.org/docs)
+- [RainbowKit Docs](https://rainbowkit.com/docs)
+- [wagmi Docs](https://wagmi.sh/docs)
+- [Base Sepolia Explorer](https://sepolia.basescan.org)
+
+---
