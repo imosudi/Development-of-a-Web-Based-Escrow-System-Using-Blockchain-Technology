@@ -1,136 +1,67 @@
-# 📦 Blockchain Escrow Simulation – Student Version
+# Development of a Web-Based Escrow System Using Blockchain Technology
 
-A full-stack simulation of a decentralized escrow system using smart contracts, blockchain, and a modern web frontend.
+## Objective
+To simulate a secure, decentralised escrow transaction system using smart contracts and blockchain infrastructure, demonstrating automation of digital trust processes in financial exchanges.
 
----
+## Simulation Type
+Blockchain Simulation / Transactional Workflow Simulation / Smart Contract Execution
 
-## 🛠 Tools Used
+## Types of Dataset
+1. Transaction records
+2. user verification logs
+3. wallet signatures
+4. contract deployment logs
 
-- **Solidity** – Smart contract language  
-- **Foundry** – Solidity development & compilation  
-- **Node.js** – Deployment scripting  
-- **viem** – Modern EVM interaction library  
-- **dotenv** – Environment variable management  
-- **Git** – Version control  
+## Possible Sources for Dataset
+1. Ethereum testnet (Goerli)
+2. Thirdweb
+3. Blockchain explorers (Etherscan)
+4. Local mock data
 
----
+## Dataset URLs
+1. https://thirdweb.com
+2. https://goerli.etherscan.io
+3. https://github.com/thirdweb-dev
 
-## 📁 Folder Structure
+## Setup Instructions
+1. 1. Design and simulate the smart contract for escrow logic using Solidity
+2. 2. Deploy contracts using Thirdweb on Ethereum testnet
+3. 3. Simulate transactions between buyer, seller, and system
+4. 4. Create Next.js frontend to interface with smart contract
+5. 5. Simulate wallet login and track escrow state transitions
+6. 6. Log activities to PostgreSQL for analytics
 
-```
-repo-root/
-│
-├── backend/              # Smart contract, deployment scripts, Foundry config
-│   ├── contracts/        # Solidity contract(s)
-│   │   └── Escrow.sol
-│   ├── deploy.js         # Node.js deployment script (viem)
-│   ├── escrow-address.txt# Deployed contract address
-│   ├── .gitignore
-│   ├── package.json      # Backend dependencies
-│   └── ...
-│
-├── frontend/             # Next.js DApp frontend
-│   ├── src/              # App source (pages, config, hooks)
-│   ├── public/           # Static assets
-│   ├── escrow-address.txt# Used for contract integration
-│   ├── .env.local        # Frontend environment variables
-│   ├── package.json      # Frontend dependencies
-│   └── ...
-│
-├── README.md             # Project overview (this file)
-└── ...
-```
+## Implementation Guide
+1. 1. Simulate escrow contract lifecycle (initiation → confirmation → release)
+2. 2. Test and simulate dispute resolution mechanisms
+3. 3. Simulate wallet-based login and verification workflows
+4. 4. Visualise system response for multi-user blockchain interaction
+5. 5. Log and display transaction statistics and outcomes
 
----
+## Expected Output(s)
+1. Real-time state transition visualisation of blockchain escrow contracts; smart contract logs; multi-user interaction dashboard; automated payment flows and confirmations; evaluation metrics on transaction cost and time delay
 
-## 📋 Summary of Implementation
+## Background Studies
+### Blockchain Simulation
+Emulation of decentralised systems where actions are governed by smart contracts and recorded immutably.
 
-- Designed and implemented an **Escrow smart contract** in Solidity supporting:
-  - Buyer, Seller, and Agent roles  
-  - Full state transitions:
-    ```
-    Initiated → Funded → Confirmed → Released/Disputed → Resolved
-    ```
-- Compiled the contract using **Foundry**, generating ABI and bytecode artifacts.  
-- Created a robust deployment script (`deploy.js`) using **viem**, supporting Base Sepolia testnet and handling Foundry artifact formats.  
-- Deployed the contract to **Base Sepolia**; deployment address stored in `escrow-address.txt`.  
-- All sensitive configuration (RPC URL, private key) is managed securely via `.env`.  
-- Project is fully version-controlled with a dedicated `student-version` branch.  
+### Escrow Contract Simulation
+Modelling conditional fund release dependent on multi-party agreement.
 
----
+### Smart Contracts
+Self-executing agreements on a blockchain network ensuring tamper-proof, automated actions.
 
-## 🔗 Links to Dataset(s)
+### Multisig Wallet Simulation
+Demonstrating co-signing mechanisms for authorising fund transfers.
 
-- [[Thirdweb](https://thirdweb.com/)](https://thirdweb.com)  
-- [[Goerli Etherscan](https://goerli.etherscan.io/)](https://goerli.etherscan.io)  
-- [[Thirdweb GitHub](https://github.com/thirdweb-dev)](https://github.com/thirdweb-dev)  
-- [[Base Sepolia Explorer](https://sepolia.basescan.org/)](https://sepolia.basescan.org)  
-- Local mock data & contract logs (see repo files)
+### Transaction Latency Analysis
+Measuring delays from contract execution to confirmation on the network.
 
----
+### Decentralised Architecture
+Removing central intermediaries to demonstrate distributed control and consensus.
 
-## 📸 Screenshots or Visual Outputs
+### UI-Blockchain Integration
+Building frontend interfaces (Next.js) that interact with smart contracts for input/output visualisation and simulation control.
 
-- ✅ **Compilation Screenshot**  
-![compilation](https://github.com/user-attachments/assets/ec4ff6cf-414d-4a1d-aaf7-f30f34834aee)
-
-- 🚀 **Deployment Screenshot**  
-![deployment](https://github.com/user-attachments/assets/919491fb-3f24-460b-a674-6ae655bb2eef)
-- 📄 `escrow-address.txt` – Contains deployed contract address (for frontend integration)
-
----
-
-## 📚 Understanding of Background Studies
-
-### 🔗 Blockchain Simulation
-This project emulates a decentralized escrow process governed by smart contracts, recording all actions immutably **on-chain**.
-
-### 🔐 Escrow Contract Simulation
-Models conditional fund release based on **multi-party agreement**, including Buyer, Seller, and Agent (for dispute resolution).
-
-### 🤖 Smart Contracts
-Self-executing agreements deployed on the **Ethereum-compatible Base Sepolia testnet**, ensuring tamper-proof and automated state transitions.
-
-### 👥 Multisig Wallet Simulation
-The contract supports **Agent intervention** during disputes, simulating a **multi-signature-like process** for secure fund release.
-
-### ⏱ Transaction Latency Analysis
-All deployment and transaction hashes are logged, enabling future analysis of:
-- Confirmation times  
-- Gas costs  
-
-### 🧱 Decentralized Architecture
-No central authority; **all logic and state transitions** are enforced by the smart contract.
-
----
-
-## 🖥 UI-Blockchain Integration (Planned)
-
-Next steps include building a **Next.js frontend** to:
-- Handle wallet login  
-- Enable user interaction with the contract  
-- Visualize escrow states and real-time analytics  
-
----
-
-## ⚙️ Performance Simulation
-
-The system is designed to simulate and evaluate:
-- **Gas costs**  
-- **Time complexity**  
-- **Robustness** under varying load conditions  
-
----
-
-## 📂 Additional Folder READMEs
-
-- See [`frontend/README.md`](./frontend/README.md) for DApp usage and setup.
-- See [`backend/README.md`](./backend/README.md) for contract, deployment, and backend tooling.
-
----
-
-## 👤 Author
-
-jvcByte
-
----
+### Performance Simulation
+Evaluating gas cost, time complexity, and system robustness under simulated workloads.
